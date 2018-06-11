@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import MenuItem from 'material-ui/MenuItem';
 import axios from 'axios';
-import SelectField from 'material-ui/SelectField'
+import SelectField from 'material-ui/SelectField';
+import BookResults from '../book-result/BookResults';
 
 class Booksearch extends Component {
     constructor(props){
@@ -11,7 +12,7 @@ class Booksearch extends Component {
         searchTitle: '',
         price: 10,
         apiUrl:'https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json',
-        apiKey:'ce9a2049fffb4140a3c3652ba36897f0',
+        apiKey:'',
         books:[]
     }
 }
@@ -34,6 +35,8 @@ this.setState({[e.target.name]: e.target.value},()=>{
 
 };
 
+onPriceChange = (e, index, value ) => this.setState({price: value})
+
 
 
 
@@ -52,7 +55,7 @@ this.setState({[e.target.name]: e.target.value},()=>{
               <br/>
               <SelectField
               name="price"
-              floatingLabelText="Price"
+              floatingLabelText="Minimum Price"
               value={this.state.price}
               onChange={this.onPriceChange}
               >
@@ -64,13 +67,15 @@ this.setState({[e.target.name]: e.target.value},()=>{
           <MenuItem value={50} primaryText="$50" />
 
           </SelectField>
+          <br/>
+          {this.state.books.length > 0 ? (
+              <BookResults books={this.state.books}/>
 
+          ) : null}
+        
+         </div>
 
-
-
-                   </div>
-
-           )
+           );
 
        }
 }
