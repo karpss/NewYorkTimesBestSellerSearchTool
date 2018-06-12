@@ -12,7 +12,7 @@ class Booksearch extends Component {
         searchTitle: '',
         price: 10,
         apiUrl:'https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json',
-        apiKey:'',
+        apiKey:'ce9a2049fffb4140a3c3652ba36897f0',
         books:[]
     }
 }
@@ -42,7 +42,6 @@ onPriceChange = (e, index, value ) => this.setState({price: value})
 
 
        render(){
-        console.log(this.state.books);
            return(
                <div>
               <TextField
