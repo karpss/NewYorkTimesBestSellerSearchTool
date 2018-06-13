@@ -13,33 +13,32 @@ class BookResults extends Component {
 
         if (books) {
             bookList = (
+
                 <Card  >
                     {books.map(book => (
-                         
-                        
-                         
-                        <React.Fragment  >
-                            
-                            
-                            
+
+                        <React.Fragment key={book.title} >
+
+
+
                             <CardHeader
-                                
+
                                 title={book.title}
                                 subtitle={book.author}
                             />
-                            
+
                             <br />
-                             
+
                             <CardText  >
                                 {book.description}
                             </CardText>
-                            
+
 
                         </React.Fragment>
 
                     ))}
                 </Card>
-                
+
 
             );
         } else {
