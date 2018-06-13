@@ -13,25 +13,33 @@ class BookResults extends Component {
 
         if (books) {
             bookList = (
-                <Card>
+                <Card  >
                     {books.map(book => (
-                        <CardHeader
-                            title={book.title}
-                            subtitle={book.author}
-                            actAsExpander={true}
-                            showExpandableButton={true}
-
-                        />
-                          
+                         
                         
+                         
+                        <React.Fragment  >
+                            
+                            
+                            
+                            <CardHeader
+                                
+                                title={book.title}
+                                subtitle={book.author}
+                            />
+                            
+                            <br />
+                             
+                            <CardText  >
+                                {book.description}
+                            </CardText>
+                            
 
-
-
-
+                        </React.Fragment>
 
                     ))}
                 </Card>
-
+                
 
             );
         } else {
@@ -40,7 +48,7 @@ class BookResults extends Component {
 
         return (
 
-            <div>
+            <div >
 
 
                 {bookList}
