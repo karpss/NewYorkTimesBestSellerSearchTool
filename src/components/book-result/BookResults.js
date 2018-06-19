@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 
 class BookResults extends Component {
@@ -59,7 +60,9 @@ class BookResults extends Component {
     }
 }
 
-
+BookResults.propTypes = {
+    books: PropTypes.array.isRequired
+  }
 
 
 export default BookResults;
